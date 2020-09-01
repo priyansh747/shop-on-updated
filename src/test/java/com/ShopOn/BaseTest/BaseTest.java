@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -21,8 +23,10 @@ public class BaseTest {
 	//@BeforeClass
 	public static  void startTest()
 	{
-	report = new ExtentReports("D:\\2019"+"\\ExtentReportResults.html",false);
-	System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver.exe"); 
+	//report = new ExtentReports("D:\\2019"+"\\ExtentReportResults.html",false);
+	//System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver.exe"); 
+	report = new ExtentReports("./ExtentReportResults.html",false);
+	System.setProperty("webdriver.chrome.driver", "/remote/users/pagarwal/chromedriver");
 	//test = report.startTest("ExtentDemo");
 	}
 
@@ -34,10 +38,10 @@ public class BaseTest {
 	//Initiate the Browser 
 
 
+	ChromeOptions options = new ChromeOptions();
+	options.setHeadless(true);
 
-
-
-	driver = new ChromeDriver();
+	driver = new ChromeDriver(options);
 	 
 
 	//Open Admin Login 
