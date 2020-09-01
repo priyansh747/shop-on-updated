@@ -96,7 +96,7 @@ public class ChangePasswordTest1  extends BaseTest{
 	
 	
 	@Test
-	public void ChangePasswordUsingValidExistingPassword() throws Exception {
+	public void ChangePasswordUsingValidExistingPassword1() throws Exception {
 		
 		LoginPage objlogin = new LoginPage(super.driver);
 
